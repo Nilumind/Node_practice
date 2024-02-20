@@ -5,8 +5,10 @@ import notesRouters from "./routes/notes";
 
 const app = express();
 
+app.use(express.json());
 
-app.use("/api/note", notesRouters )
+
+app.use("/api/notes", notesRouters );
 
 app.use((req,res, next) =>{
    next(Error("Endpoint not found"));
